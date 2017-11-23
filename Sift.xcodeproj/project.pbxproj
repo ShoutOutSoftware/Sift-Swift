@@ -10,6 +10,8 @@
 		0CA10BE51FBA9B630038AAFA /* Sift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CA10BDB1FBA9B630038AAFA /* Sift.framework */; };
 		0CA10BEA1FBA9B630038AAFA /* SiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA10BE91FBA9B630038AAFA /* SiftTests.swift */; };
 		0CA10BEC1FBA9B630038AAFA /* Sift.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CA10BDE1FBA9B630038AAFA /* Sift.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0CA10BF61FBA9B9B0038AAFA /* Sift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA10BF51FBA9B9B0038AAFA /* Sift.swift */; };
+		0CA10BF81FBA9BA50038AAFA /* SiftError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA10BF71FBA9BA50038AAFA /* SiftError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		0CA10BE41FBA9B630038AAFA /* SiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CA10BE91FBA9B630038AAFA /* SiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiftTests.swift; sourceTree = "<group>"; };
 		0CA10BEB1FBA9B630038AAFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CA10BF51FBA9B9B0038AAFA /* Sift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sift.swift; sourceTree = "<group>"; };
+		0CA10BF71FBA9BA50038AAFA /* SiftError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiftError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +77,8 @@
 			children = (
 				0CA10BDE1FBA9B630038AAFA /* Sift.h */,
 				0CA10BDF1FBA9B630038AAFA /* Info.plist */,
+				0CA10BF51FBA9B9B0038AAFA /* Sift.swift */,
+				0CA10BF71FBA9BA50038AAFA /* SiftError.swift */,
 			);
 			path = Sift;
 			sourceTree = "<group>";
@@ -148,6 +154,7 @@
 				TargetAttributes = {
 					0CA10BDA1FBA9B630038AAFA = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					0CA10BE31FBA9B630038AAFA = {
@@ -196,6 +203,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CA10BF81FBA9BA50038AAFA /* SiftError.swift in Sources */,
+				0CA10BF61FBA9B9B0038AAFA /* Sift.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +343,7 @@
 		0CA10BF01FBA9B630038AAFA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -347,6 +357,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.shoutoutsoftware.Sift;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,6 +366,7 @@
 		0CA10BF11FBA9B630038AAFA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -376,6 +388,7 @@
 		0CA10BF31FBA9B630038AAFA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KY73CSSB4N;
 				INFOPLIST_FILE = SiftTests/Info.plist;
@@ -390,6 +403,7 @@
 		0CA10BF41FBA9B630038AAFA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KY73CSSB4N;
 				INFOPLIST_FILE = SiftTests/Info.plist;
