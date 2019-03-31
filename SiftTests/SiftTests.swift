@@ -58,27 +58,27 @@ class SiftTests: XCTestCase {
     }
 
     func testReadValuesFromComplexDictionary() throws {
-        let innerDict1: [String: Any?] = ["innerString": "inner1Val",
-            "innerDoubleArray": [1.2, 324.23, 434.2323]]
-        let dictList: [[String: Any?]] = [["dictList1String": "aMS1"],
-            ["dictList2Int": 5],
-            ["dictList3Array": ["a", "b", "c"]]]
         let data: [String: Any?] =
             ["null": nil,
                 "int": 1,
                 "string": "some string",
                 "float": 2.1,
                 "double": 12.43234324,
+                "bool": true,
                 "intArray": [1, 2, 3],
                 "stringArray": ["valOne", "valTwo", "valThree"],
-                "innerDict": innerDict1,
-                "dictList": dictList]
+                "innerDict": ["innerString": "inner1Val",
+                    "innerDoubleArray": [1.2, 324.23, 434.2323]],
+                "dictList": [["dictList1String": "aMS1"],
+                    ["dictList2Int": 5],
+                    ["dictList3Array": ["a", "b", "c"]]]]
 
         XCTAssertEqual(nil, sift.readString(from: data, key: "null", defaultValue: nil))
         XCTAssertEqual(1, try sift.readNumber(from: data, key: "int"))
         XCTAssertEqual("some string", try sift.readString(from: data, key: "string"))
         XCTAssertEqual(2.1, try sift.readNumber(from: data, key: "float"))
         XCTAssertEqual(12.43234324, try sift.readNumber(from: data, key: "double"))
+        XCTAssertEqual(true, try sift.readBool(from: data, key: "bool"))
         XCTAssertEqual([1, 2, 3], try sift.readNumberList(from: data, key: "intArray"))
         XCTAssertEqual(["valOne", "valTwo", "valThree"], try sift.readStringList(from: data, key: "stringArray"))
 
@@ -87,9 +87,9 @@ class SiftTests: XCTestCase {
         XCTAssertEqual([1.2, 324.23, 434.2323], try sift.readNumberList(from: parsedInnerDict1, key: "innerDoubleArray"))
 
         let parsedDictList = try sift.readDictionaryList(from: data, key: "dictList")
-        XCTAssertEqual("aMS1", try sift.readString(from:parsedDictList[0], key: "dictList1String"))
-        XCTAssertEqual(5, try sift.readNumber(from:parsedDictList[1], key: "dictList2Int"))
-        XCTAssertEqual(["a", "b", "c"], try sift.readStringList(from:parsedDictList[2], key: "dictList3Array"))
+        XCTAssertEqual("aMS1", try sift.readString(from: parsedDictList[0], key: "dictList1String"))
+        XCTAssertEqual(5, try sift.readNumber(from: parsedDictList[1], key: "dictList2Int"))
+        XCTAssertEqual(["a", "b", "c"], try sift.readStringList(from: parsedDictList[2], key: "dictList3Array"))
     }
-    
+
 }

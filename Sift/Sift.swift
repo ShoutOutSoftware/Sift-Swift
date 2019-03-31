@@ -57,6 +57,14 @@ class Sift {
     public func readDictionaryList(from: [String: Any?], key: String, defaultValue: [[String: Any?]]?) -> [[String: Any?]]? {
         return read(dictionary: from, key: key, defaultValue: defaultValue)
     }
+    
+    public func readBool(from: [String: Any?], key: String) throws -> Bool {
+        return try read(dictionary: from, key: key)
+    }
+    
+    public func readBool(from: [String: Any?], key: String, defaultValue: Bool?) -> Bool? {
+        return read(dictionary: from, key: key, defaultValue: defaultValue)
+    }
 
     private func read<T: Any>(dictionary: [String: Any?], key: String, defaultValue: T?) -> T? {
         do {
