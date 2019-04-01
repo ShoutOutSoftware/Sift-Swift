@@ -8,7 +8,11 @@
 
 import Foundation
 
-class Sift {
+public class Sift {
+    
+    public init() {
+        
+    }
 
     public func readString(from: [String: Any?], key: String) throws -> String {
         return try read(dictionary: from, key: key)
