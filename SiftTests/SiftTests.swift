@@ -14,21 +14,28 @@ class SiftTests: XCTestCase {
     private let sift = Sift.init()
     private let data: [String: Any?] = ["wrongValue": 2, "nullValue": nil, "correctValue": "some value"]
 
+    func testThrowsErrorIfMapIsNull() {
+        XCTAssertThrowsError(try sift.readString(from: nil, key: "randomKey")) { error in
+            XCTAssertEqual((error as! SiftError).message, "the map is null")
+        }
+    }
+
     func testThrowsErrorIfKeyIsNotFound() {
         XCTAssertThrowsError(try sift.readString(from: data, key: "randomKey")) { error in
-            XCTAssertEqual(SiftError.KeyNotFound, error as! SiftError)
+            XCTAssertEqual((error as! SiftError).message, "key not found")
         }
     }
 
     func testThrowsErrorIfValueTypeIsWrong() {
         XCTAssertThrowsError(try sift.readString(from: data, key: "wrongValue")) { error in
-            XCTAssertEqual(SiftError.IncompatibleTypes(message: ""), error as! SiftError)
+            let value = data["wrongValue"]!
+            XCTAssertEqual((error as! SiftError).message, "the value type is not the same as the requested one.\nRequested Type: String.Type\nFound: \(type(of: value))")
         }
     }
 
     func testThrowsErrorIfValueIsNil() {
         XCTAssertThrowsError(try sift.readString(from: data, key: "nullValue")) { error in
-            XCTAssertEqual(SiftError.NullValue, error as! SiftError)
+            XCTAssertEqual((error as! SiftError).message, "the value is null")
         }
     }
 

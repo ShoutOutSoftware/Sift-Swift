@@ -8,21 +8,12 @@
 
 import Foundation
 
-public enum SiftError: Error, Equatable {
-    case KeyNotFound
-    case NullValue
-    case IncompatibleTypes(message: String)
+public class SiftError: Error {
     
-    public static func ==(lhs: SiftError, rhs: SiftError) -> Bool {
-        switch (lhs, rhs) {
-        case (.KeyNotFound, .KeyNotFound):
-            return true
-        case (.NullValue, .NullValue):
-            return true
-        case (.IncompatibleTypes, .IncompatibleTypes):
-            return true
-        default:
-            return false
-        }
+    public let message: String
+    
+    init(message: String) {
+        self.message = message
     }
+ 
 }
