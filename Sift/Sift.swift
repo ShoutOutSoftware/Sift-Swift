@@ -22,11 +22,11 @@ public class Sift {
         return read(dictionary: from, key: key, defaultValue: defaultValue)
     }
     
-    public func readStringList(from: [String: Any?]?, key: String) throws -> [String] {
+    public func readStringArray(from: [String: Any?]?, key: String) throws -> [String] {
         return try read(dictionary: from, key: key)
     }
     
-    public func readStringList(from: [String: Any?]?, key: String, defaultValue: [String]?) -> [String]? {
+    public func readStringArray(from: [String: Any?]?, key: String, defaultValue: [String]?) -> [String]? {
         return read(dictionary: from, key: key, defaultValue: defaultValue)
     }
     
@@ -38,11 +38,11 @@ public class Sift {
         return read(dictionary: from, key: key, defaultValue: defaultValue)
     }
     
-    public func readNumberList(from: [String: Any?]?, key: String) throws -> [NSNumber] {
+    public func readNumberArray(from: [String: Any?]?, key: String) throws -> [NSNumber] {
         return try read(dictionary: from, key: key)
     }
     
-    public func readNumberList(from: [String: Any?]?, key: String, defaultValue: [NSNumber]?) -> [NSNumber]? {
+    public func readNumberArray(from: [String: Any?]?, key: String, defaultValue: [NSNumber]?) -> [NSNumber]? {
         return read(dictionary: from, key: key, defaultValue: defaultValue)
     }
     
@@ -54,11 +54,11 @@ public class Sift {
         return read(dictionary: from, key: key, defaultValue: defaultValue)
     }
     
-    public func readDictionaryList(from: [String: Any?]?, key: String) throws -> [[String: Any?]] {
+    public func readDictionaryArray(from: [String: Any?]?, key: String) throws -> [[String: Any?]] {
         return try read(dictionary: from, key: key)
     }
     
-    public func readDictionaryList(from: [String: Any?]?, key: String, defaultValue: [[String: Any?]]?) -> [[String: Any?]]? {
+    public func readDictionaryArray(from: [String: Any?]?, key: String, defaultValue: [[String: Any?]]?) -> [[String: Any?]]? {
         return read(dictionary: from, key: key, defaultValue: defaultValue)
     }
     
