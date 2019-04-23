@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Sift-Swift"
-  s.version      = "0.0.6"
+  s.version      = "0.0.7"
   s.summary      = "A lightweight dictionary reading library"
   s.description  = <<-DESC
                     A light weight dictionary reading library to safely read values from a dictionary
