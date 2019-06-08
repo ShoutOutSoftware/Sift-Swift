@@ -1,5 +1,5 @@
 //
-//  SiftTests.swift
+//  ReadDictionaryTests.swift
 //  SiftTests
 //
 //  Created by Obaid Ahmed Mohammed on 14/11/17.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import Sift
 
-class SiftTests: XCTestCase {
+class ReadDictionaryTests: XCTestCase {
 
     private let sift = Sift.init()
     private let data: [String: Any?] = ["wrongValue": 2, "nullValue": nil, "correctValue": "some value"]
@@ -29,7 +29,7 @@ class SiftTests: XCTestCase {
     func testThrowsErrorIfValueTypeIsWrong() {
         XCTAssertThrowsError(try sift.readString(from: data, key: "wrongValue")) { error in
             let value = data["wrongValue"]!
-            XCTAssertEqual((error as! SiftError).message, "the value type is not the same as the requested one.\nRequested Type: String.Type\nFound: \(type(of: value))")
+            XCTAssertEqual((error as! SiftError).message, "the value type is not the same as the requested one.\nRequested Type: String.Type\nFound: \(type(of: value!))")
         }
     }
 
