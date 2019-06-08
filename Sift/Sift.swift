@@ -106,32 +106,32 @@ public class Sift {
 
     //MARK: Functions to read from array
 
-    public func readString(from: [Any?]?, atIndex: Int) throws -> String {
+    public func readString(from: [Any?]?, atIndex: Int?) throws -> String {
         return try read(array: from, atIndex: atIndex)
     }
 
-    public func readString(from: [Any?]?, atIndex: Int, defaultValue: String?) -> String? {
+    public func readString(from: [Any?]?, atIndex: Int?, defaultValue: String?) -> String? {
         return read(array: from, atIndex: atIndex, defaultValue: defaultValue)
     }
 
-    public func readNumber(from: [Any?]?, atIndex: Int) throws -> NSNumber {
+    public func readNumber(from: [Any?]?, atIndex: Int?) throws -> NSNumber {
         return try read(array: from, atIndex: atIndex)
     }
 
-    public func readNumber(from: [Any?]?, atIndex: Int, defaultValue: NSNumber?) -> NSNumber? {
+    public func readNumber(from: [Any?]?, atIndex: Int?, defaultValue: NSNumber?) -> NSNumber? {
         return read(array: from, atIndex: atIndex, defaultValue: defaultValue)
     }
 
-    public func readDictionary(from: [Any?]?, atIndex: Int) throws -> [String: Any?] {
+    public func readDictionary(from: [Any?]?, atIndex: Int?) throws -> [String: Any?] {
         return try read(array: from, atIndex: atIndex)
     }
 
-    public func readDictionary(from: [Any?]?, atIndex: Int, defaultValue: [String: Any?]?) -> [String: Any?]? {
+    public func readDictionary(from: [Any?]?, atIndex: Int?, defaultValue: [String: Any?]?) -> [String: Any?]? {
         return read(array: from, atIndex: atIndex, defaultValue: defaultValue)
     }
 
 
-    private func read<T: Any>(array: [Any?]?, atIndex: Int, defaultValue: T?) -> T? {
+    private func read<T: Any>(array: [Any?]?, atIndex: Int?, defaultValue: T?) -> T? {
         do {
             return try read(array: array, atIndex: atIndex)
         } catch {
@@ -139,19 +139,23 @@ public class Sift {
         }
     }
 
-    private func read<T: Any>(array: [Any?]?, atIndex: Int) throws -> T {
-        guard array != nil else {
+    private func read<T: Any>(array: [Any?]?, atIndex: Int?) throws -> T {
+        guard let array = array else {
             throw SiftError(message: "the array is null")
         }
+        
+        guard let index = atIndex else {
+            throw SiftError(message: "the index is null")
+        }
 
-        if array!.count > atIndex {
-            if let value = array![atIndex] {
+        if array.count > index {
+            if let value = array[index] {
                 return try parseValue(value)
             } else {
                 throw SiftError(message: "the value is null")
             }
         } else {
-            throw SiftError(message: "index \(atIndex) out of bounds")
+            throw SiftError(message: "index \(index) out of bounds")
         }
     }
 

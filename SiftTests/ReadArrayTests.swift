@@ -21,6 +21,12 @@ class ReadArrayTests: XCTestCase {
         }
     }
 
+    func testThrowsErrorIfIndexIsNil() {
+        XCTAssertThrowsError(try sift.readString(from: ["hello", "hey", "hi"], atIndex: nil)) { error in
+            XCTAssertEqual((error as! SiftError).message, "the index is null")
+        }
+    }
+    
     func testThrowsErrorIfIndexIsOutOfBounds() {
         XCTAssertThrowsError(try sift.readString(from: ["hello", "hey", "hi"], atIndex: 4)) { error in
             XCTAssertEqual((error as! SiftError).message, "index 4 out of bounds")
