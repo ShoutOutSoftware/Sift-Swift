@@ -17,19 +17,19 @@ class ReadArrayTests: XCTestCase {
 
     func testThrowsErrorIfArrayIsNull() {
         XCTAssertThrowsError(try sift.readString(from: nil, atIndex: 0)) { error in
-            XCTAssertEqual((error as! SiftError).message, "the array is null")
+            XCTAssertEqual(error.localizedDescription, "the array is null")
         }
     }
 
     func testThrowsErrorIfIndexIsNil() {
         XCTAssertThrowsError(try sift.readString(from: ["hello", "hey", "hi"], atIndex: nil)) { error in
-            XCTAssertEqual((error as! SiftError).message, "the index is null")
+            XCTAssertEqual(error.localizedDescription, "the index is null")
         }
     }
     
     func testThrowsErrorIfIndexIsOutOfBounds() {
         XCTAssertThrowsError(try sift.readString(from: ["hello", "hey", "hi"], atIndex: 4)) { error in
-            XCTAssertEqual((error as! SiftError).message, "index 4 out of bounds")
+            XCTAssertEqual(error.localizedDescription, "index 4 out of bounds")
         }
     }
 
@@ -37,13 +37,13 @@ class ReadArrayTests: XCTestCase {
         let array = [1, 2, 3]
         XCTAssertThrowsError(try sift.readString(from: [1, 2, 3], atIndex: 1)) { error in
             let value = array[1]
-            XCTAssertEqual((error as! SiftError).message, "the value type is not the same as the requested one.\nRequested Type: String.Type\nFound: \(type(of: value))")
+            XCTAssertEqual(error.localizedDescription, "the value type is not the same as the requested one.\nRequested Type: String.Type\nFound: \(type(of: value))")
         }
     }
 
     func testThrowsErrorIfValueIsNil() {
         XCTAssertThrowsError(try sift.readString(from: ["hello", "hey", nil], atIndex: 2)) { error in
-            XCTAssertEqual((error as! SiftError).message, "the value is null")
+            XCTAssertEqual(error.localizedDescription, "the value is null")
         }
     }
 

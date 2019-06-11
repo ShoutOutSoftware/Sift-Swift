@@ -16,26 +16,26 @@ class ReadDictionaryTests: XCTestCase {
 
     func testThrowsErrorIfMapIsNull() {
         XCTAssertThrowsError(try sift.readString(from: nil, key: "randomKey")) { error in
-            XCTAssertEqual((error as! SiftError).message, "the map is null")
+            XCTAssertEqual(error.localizedDescription, "the map is null")
         }
     }
 
     func testThrowsErrorIfKeyIsNotFound() {
         XCTAssertThrowsError(try sift.readString(from: data, key: "randomKey")) { error in
-            XCTAssertEqual((error as! SiftError).message, "key not found")
+            XCTAssertEqual(error.localizedDescription, "key not found")
         }
     }
 
     func testThrowsErrorIfValueTypeIsWrong() {
         XCTAssertThrowsError(try sift.readString(from: data, key: "wrongValue")) { error in
             let value = data["wrongValue"]!
-            XCTAssertEqual((error as! SiftError).message, "the value type is not the same as the requested one.\nRequested Type: String.Type\nFound: \(type(of: value!))")
+            XCTAssertEqual(error.localizedDescription, "the value type is not the same as the requested one.\nRequested Type: String.Type\nFound: \(type(of: value!))")
         }
     }
 
     func testThrowsErrorIfValueIsNil() {
         XCTAssertThrowsError(try sift.readString(from: data, key: "nullValue")) { error in
-            XCTAssertEqual((error as! SiftError).message, "the value is null")
+            XCTAssertEqual(error.localizedDescription, "the value is null")
         }
     }
 
