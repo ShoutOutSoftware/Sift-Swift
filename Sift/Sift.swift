@@ -140,13 +140,9 @@ public class Sift {
     }
 
     private func read<T: Any>(array: [Any?]?, atIndex: Int?) throws -> T {
-        guard let array = array else {
-            throw SiftError(message: "the array is null")
-        }
+        guard let array = array else { throw SiftError(message: "the array is null") }
         
-        guard let index = atIndex else {
-            throw SiftError(message: "the index is null")
-        }
+        guard let index = atIndex else { throw SiftError(message: "the index is null") }
 
         if array.count > index {
             if let value = array[index] {

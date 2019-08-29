@@ -1,5 +1,5 @@
 //
-//  ReadArrayTests.swift
+//  ReadFromArrayTests.swift
 //  SiftTests
 //
 //  Created by Mohammed Obaid Ahmed on 08/06/19.
@@ -10,10 +10,9 @@ import XCTest
 @testable import Sift
 
 
-class ReadArrayTests: XCTestCase {
+class ReadFromArrayTests: XCTestCase {
 
     private let sift = Sift.init()
-    private let data: [String: Any?] = ["wrongValue": 2, "nullValue": nil, "correctValue": "some value"]
 
     func testThrowsErrorIfArrayIsNull() {
         XCTAssertThrowsError(try sift.readString(from: nil, atIndex: 0)) { error in

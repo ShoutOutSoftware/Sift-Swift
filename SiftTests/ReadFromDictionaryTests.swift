@@ -1,5 +1,5 @@
 //
-//  ReadDictionaryTests.swift
+//  ReadFromDictionaryTests.swift
 //  SiftTests
 //
 //  Created by Obaid Ahmed Mohammed on 14/11/17.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import Sift
 
-class ReadDictionaryTests: XCTestCase {
+class ReadFromDictionaryTests: XCTestCase {
 
     private let sift = Sift.init()
     private let data: [String: Any?] = ["wrongValue": 2, "nullValue": nil, "correctValue": "some value"]

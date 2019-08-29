@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C6AB3F022ABCD2C00353A99 /* ReadArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6AB3EF22ABCD2C00353A99 /* ReadArrayTests.swift */; };
+		0C6AB3F022ABCD2C00353A99 /* ReadFromArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6AB3EF22ABCD2C00353A99 /* ReadFromArrayTests.swift */; };
 		0CA10BE51FBA9B630038AAFA /* Sift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CA10BDB1FBA9B630038AAFA /* Sift.framework */; };
-		0CA10BEA1FBA9B630038AAFA /* ReadDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA10BE91FBA9B630038AAFA /* ReadDictionaryTests.swift */; };
+		0CA10BEA1FBA9B630038AAFA /* ReadFromDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA10BE91FBA9B630038AAFA /* ReadFromDictionaryTests.swift */; };
 		0CA10BEC1FBA9B630038AAFA /* Sift.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CA10BDE1FBA9B630038AAFA /* Sift.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0CA10BF61FBA9B9B0038AAFA /* Sift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA10BF51FBA9B9B0038AAFA /* Sift.swift */; };
 		0CA10BF81FBA9BA50038AAFA /* SiftError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA10BF71FBA9BA50038AAFA /* SiftError.swift */; };
@@ -26,12 +26,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0C6AB3EF22ABCD2C00353A99 /* ReadArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadArrayTests.swift; sourceTree = "<group>"; };
+		0C6AB3EF22ABCD2C00353A99 /* ReadFromArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadFromArrayTests.swift; sourceTree = "<group>"; };
 		0CA10BDB1FBA9B630038AAFA /* Sift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CA10BDE1FBA9B630038AAFA /* Sift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sift.h; sourceTree = "<group>"; };
 		0CA10BDF1FBA9B630038AAFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CA10BE41FBA9B630038AAFA /* SiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0CA10BE91FBA9B630038AAFA /* ReadDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadDictionaryTests.swift; sourceTree = "<group>"; };
+		0CA10BE91FBA9B630038AAFA /* ReadFromDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadFromDictionaryTests.swift; sourceTree = "<group>"; };
 		0CA10BEB1FBA9B630038AAFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CA10BF51FBA9B9B0038AAFA /* Sift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sift.swift; sourceTree = "<group>"; };
 		0CA10BF71FBA9BA50038AAFA /* SiftError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiftError.swift; sourceTree = "<group>"; };
@@ -88,8 +88,8 @@
 		0CA10BE81FBA9B630038AAFA /* SiftTests */ = {
 			isa = PBXGroup;
 			children = (
-				0C6AB3EF22ABCD2C00353A99 /* ReadArrayTests.swift */,
-				0CA10BE91FBA9B630038AAFA /* ReadDictionaryTests.swift */,
+				0C6AB3EF22ABCD2C00353A99 /* ReadFromArrayTests.swift */,
+				0CA10BE91FBA9B630038AAFA /* ReadFromDictionaryTests.swift */,
 				0CA10BEB1FBA9B630038AAFA /* Info.plist */,
 			);
 			path = SiftTests;
@@ -217,8 +217,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CA10BEA1FBA9B630038AAFA /* ReadDictionaryTests.swift in Sources */,
-				0C6AB3F022ABCD2C00353A99 /* ReadArrayTests.swift in Sources */,
+				0CA10BEA1FBA9B630038AAFA /* ReadFromDictionaryTests.swift in Sources */,
+				0C6AB3F022ABCD2C00353A99 /* ReadFromArrayTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
