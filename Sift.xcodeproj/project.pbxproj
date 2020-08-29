@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C6AB3F022ABCD2C00353A99 /* ReadFromArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6AB3EF22ABCD2C00353A99 /* ReadFromArrayTests.swift */; };
+		0C838A8C24FA549300BB4352 /* ReadDateFromDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C838A8B24FA549300BB4352 /* ReadDateFromDictionaryTests.swift */; };
 		0CA10BE51FBA9B630038AAFA /* Sift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0CA10BDB1FBA9B630038AAFA /* Sift.framework */; };
 		0CA10BEA1FBA9B630038AAFA /* ReadFromDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CA10BE91FBA9B630038AAFA /* ReadFromDictionaryTests.swift */; };
 		0CA10BEC1FBA9B630038AAFA /* Sift.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CA10BDE1FBA9B630038AAFA /* Sift.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		0C6AB3EF22ABCD2C00353A99 /* ReadFromArrayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadFromArrayTests.swift; sourceTree = "<group>"; };
+		0C838A8B24FA549300BB4352 /* ReadDateFromDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadDateFromDictionaryTests.swift; sourceTree = "<group>"; };
 		0CA10BDB1FBA9B630038AAFA /* Sift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Sift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CA10BDE1FBA9B630038AAFA /* Sift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Sift.h; sourceTree = "<group>"; };
 		0CA10BDF1FBA9B630038AAFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		0CA10BE81FBA9B630038AAFA /* SiftTests */ = {
 			isa = PBXGroup;
 			children = (
+				0C838A8B24FA549300BB4352 /* ReadDateFromDictionaryTests.swift */,
 				0C6AB3EF22ABCD2C00353A99 /* ReadFromArrayTests.swift */,
 				0CA10BE91FBA9B630038AAFA /* ReadFromDictionaryTests.swift */,
 				0CA10BEB1FBA9B630038AAFA /* Info.plist */,
@@ -219,6 +222,7 @@
 			files = (
 				0CA10BEA1FBA9B630038AAFA /* ReadFromDictionaryTests.swift in Sources */,
 				0C6AB3F022ABCD2C00353A99 /* ReadFromArrayTests.swift in Sources */,
+				0C838A8C24FA549300BB4352 /* ReadDateFromDictionaryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

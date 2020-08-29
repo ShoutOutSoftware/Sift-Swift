@@ -72,6 +72,27 @@ public class Sift {
         return read(dictionary: from, key: key, defaultValue: defaultValue)
     }
 
+    public func readDate(from: [String: Any?]?, key: String, dateFormat: String, defaultValue: Date?) -> Date? {
+        do {
+            return try readDate(from: from, key: key, dateFormat: dateFormat)
+        } catch {
+            return defaultValue
+        }
+    }
+
+    public func readDate(from: [String: Any?]?, key: String, dateFormat: String) throws -> Date {
+        let dateString: String = try read(dictionary: from, key: key)
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+
+        if let date = dateFormatter.date(from: dateString) {
+            return date
+        } else {
+            throw SiftError(message: "Failed to parse date for Key: \(key), Date: \(dateString), Format: \(dateFormat)")
+        }
+    }
+
     private func read<T: Any>(dictionary: [String: Any?]?, key: String, defaultValue: T?) -> T? {
         do {
             return try read(dictionary: dictionary, key: key)
@@ -82,25 +103,17 @@ public class Sift {
 
     private func read<T: Any>(dictionary: [String: Any?]?, key: String) throws -> T {
         guard dictionary != nil else {
-            throw SiftError(message: "the map is null")
+            throw SiftError(message: "The source map is null")
         }
 
         if dictionary!.keys.contains(key) {
             if let value = dictionary![key], value != nil {
-                return try parseValue(value!)
+                return try parseValue(value!, identifier: "Key: \(key)")
             } else {
-                throw SiftError(message: "the value is null")
+                throw SiftError(message: "The value is null for key: \(key)")
             }
         } else {
-            throw SiftError(message: "key not found")
-        }
-    }
-
-    private func parseValue<T: Any>(_ value: Any) throws -> T {
-        if value is T {
-            return value as! T
-        } else {
-            throw SiftError(message: "the value type is not the same as the requested one.\nRequested Type: \(type(of: T.self))\nFound: \(type(of: value))")
+            throw SiftError(message: "Key: \(key) not found")
         }
     }
 
@@ -140,18 +153,30 @@ public class Sift {
     }
 
     private func read<T: Any>(array: [Any?]?, atIndex: Int?) throws -> T {
-        guard let array = array else { throw SiftError(message: "the array is null") }
-        
-        guard let index = atIndex else { throw SiftError(message: "the index is null") }
+        guard let array = array else { throw SiftError(message: "The source array is null") }
+
+        guard let index = atIndex else { throw SiftError(message: "The index is null") }
 
         if array.count > index {
             if let value = array[index] {
-                return try parseValue(value)
+                return try parseValue(value, identifier: "Index: \(index)")
             } else {
-                throw SiftError(message: "the value is null")
+                throw SiftError(message: "The value at index \(index) is null")
             }
         } else {
-            throw SiftError(message: "index \(index) out of bounds")
+            throw SiftError(message: "Index \(index) out of bounds")
+        }
+    }
+
+    //MARK: Function to par a value
+
+    private func parseValue<T: Any>(_ value: Any, identifier: String) throws -> T {
+        if value is T {
+            return value as! T
+        } else {
+            throw SiftError(message: "The value type is not the same as the requested one." +
+                    "\n\(identifier)" +
+                    "\nRequested Type: \(type(of: T.self))\nFound: \(type(of: value))")
         }
     }
 
