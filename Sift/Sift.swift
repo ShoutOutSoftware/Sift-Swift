@@ -2,8 +2,7 @@
 //  Sift.swift
 //  Sift
 //
-//  Created by Obaid Ahmed Mohammed on 14/11/17.
-//  Copyright © 2017 Shoutout Software. All rights reserved.
+//  Copyright © 2021 Shoutout Software. All rights reserved.
 //
 
 import Foundation

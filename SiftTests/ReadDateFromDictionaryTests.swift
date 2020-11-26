@@ -2,8 +2,7 @@
 //  ReadDateFromDictionaryTests.swift
 //  SiftTests
 //
-//  Created by Mohammed Obaid Ahmed on 29/08/20.
-//  Copyright © 2020 Shoutout Software. All rights reserved.
+//  Copyright © 2021 Shoutout Software. All rights reserved.
 //
 
 import XCTest

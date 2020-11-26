@@ -2,8 +2,7 @@
 //  ReadFromArrayTests.swift
 //  SiftTests
 //
-//  Created by Mohammed Obaid Ahmed on 08/06/19.
-//  Copyright © 2019 Shoutout Software. All rights reserved.
+//  Copyright © 2021 Shoutout Software. All rights reserved.
 //
 
 import XCTest
