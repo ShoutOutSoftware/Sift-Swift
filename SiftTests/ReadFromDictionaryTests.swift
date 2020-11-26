@@ -1,10 +1,3 @@
-//
-//  ReadFromDictionaryTests.swift
-//  SiftTests
-//
-//  Copyright © 2021 Shoutout Software. All rights reserved.
-//
-
 import XCTest
 @testable import Sift
 

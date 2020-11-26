@@ -1,10 +1,3 @@
-//
-//  Sift.swift
-//  Sift
-//
-//  Copyright © 2021 Shoutout Software. All rights reserved.
-//
-
 import Foundation
 
 public class Sift {

@@ -1,10 +1,3 @@
-//
-//  Sift.h
-//  Sift
-//
-//  Copyright © 2021 Shoutout Software. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
 
 //! Project version number for Sift.
